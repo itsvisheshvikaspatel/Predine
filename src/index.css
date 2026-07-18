@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-charcoal-50 text-charcoal-900 font-sans antialiased;
+  }
+  * {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Subtle map grid background */
+.map-grid-bg {
+  background-color: #eef0ec;
+  background-image:
+    linear-gradient(rgba(120, 130, 110, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 130, 110, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
