@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 app.use("/restaurants", restaurantRoutes);
 app.use("/orders", orderRoutes);
-app.use("/users", userRoutes);
+app.use("/api/users", userRoutes);
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("MongoDB Connected Successfully ✅");
