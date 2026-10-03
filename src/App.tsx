@@ -95,7 +95,7 @@ console.log("Payment successful! Sending order to backend...");
 const token = localStorage.getItem("token");
 
 
-const res = await fetch("http://localhost:5000/orders", {
+const res = await fetch("/api/orders", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

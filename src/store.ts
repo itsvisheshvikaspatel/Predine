@@ -1,7 +1,7 @@
 import type { Order, User } from './types';
 import { FIXED_TABLE } from './data';
-const API = "http://localhost:5000/api";
-const API_URL = "http://localhost:5000/api";
+const API = "/api";
+const API_URL = "/api";
 
 const USERS_KEY = 'predine:users';
 const SESSION_KEY = 'predine:session';
@@ -36,7 +36,7 @@ export async function registerUser(
   name: string
 ): Promise<{ ok: boolean; error?: string; user?: User }> {
   try {
-    const res = await fetch("http://localhost:5000/users/signup", {
+    const res = await fetch("/api/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export async function loginUser(
 ): Promise<{ ok: boolean; error?: string; user?: User }> {
 
   try {
-    const res = await fetch("http://localhost:5000/users/login", {
+   const res = await fetch("/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -194,7 +194,7 @@ export async function fetchMyOrders() {
   try {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/orders/my-orders", {
+    const res = await fetch("/api/orders/my-orders", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
