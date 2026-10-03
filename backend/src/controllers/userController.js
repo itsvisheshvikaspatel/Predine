@@ -44,12 +44,12 @@ res.status(201).json({
   },
 });
 
-  } catch (error) {
-    console.error(error);
+   } catch (error) {
+    console.error("SIGNUP ERROR:", error);
 
     res.status(500).json({
       success: false,
-      message: "Server Error",
+      message: error.message,
     });
   }
 }
